@@ -193,8 +193,8 @@ ng\:form {
       <section class="title_section darkblue"> </section>
 			<div class="col-md-12" style="background-color: #254356">
 					<!-- tabs -->
-					<ul class="tabs">{% for section in site.data.toc.horizontalnav %}
-							<li id="{{ section.node }}"><a href="{{ section.path }}">{{ section.title }}</a></li>{% endfor %}
+					<ul class="tabs">
+						{% include treebuilder.html %}
 					</ul>
 			</div>
       <div class="">
@@ -202,7 +202,8 @@ ng\:form {
           <div class="row">
             <div class="col-xs-12 col-sm-3 col-md-2 col-xl-2 docsidebarnav_section">
               <div class="region region-hero-sub"><ul class="nav-sub">
-								{% include treebuilder.html %}
+								<!-- left nav, from var populated in treebuilder.html -->
+								{{ leftnav }}
 							</ul>
               </div>
             </div>
